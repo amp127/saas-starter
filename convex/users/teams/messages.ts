@@ -1,7 +1,7 @@
 import { paginationOptsValidator } from "convex/server";
 import { v } from "convex/values";
 import { mutation, query } from "../../functions";
-import { viewerHasPermission, viewerWithPermissionX } from "../../permissions";
+import { viewerHasPermission, viewerWithPermissionX } from "./permissions/permissions";
 
 export const list = query({
   args: {

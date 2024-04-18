@@ -8,7 +8,7 @@ import { internalMutation, mutation, query } from "../../../functions";
 import {
   viewerHasPermission,
   viewerHasPermissionX,
-} from "../../../permissions";
+} from "../permissions/permissions";
 
 export const list = query({
   args: {

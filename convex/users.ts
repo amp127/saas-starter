@@ -1,5 +1,5 @@
 import { mutation } from "./functions";
-import { getRole } from "./permissions";
+import { getRole } from "./users/teams/permissions/permissions";
 import { defaultToAccessTeamSlug, getUniqueSlug } from "./users/teams";
 import { createMember } from "./users/teams/members";
 

@@ -17,11 +17,12 @@ import type {
 import type * as functions from "../functions.js";
 import type * as init from "../init.js";
 import type * as invites from "../invites.js";
-import type * as permissions from "../permissions.js";
 import type * as types from "../types.js";
 import type * as users_teams_members_invites from "../users/teams/members/invites.js";
+import type * as users_teams_members_permissions from "../users/teams/members/permissions.js";
 import type * as users_teams_members from "../users/teams/members.js";
 import type * as users_teams_messages from "../users/teams/messages.js";
+import type * as users_teams_permissions_permissions from "../users/teams/permissions/permissions.js";
 import type * as users_teams_roles from "../users/teams/roles.js";
 import type * as users_teams from "../users/teams.js";
 import type * as users from "../users.js";
@@ -39,11 +40,12 @@ declare const fullApi: ApiFromModules<{
   functions: typeof functions;
   init: typeof init;
   invites: typeof invites;
-  permissions: typeof permissions;
   types: typeof types;
   "users/teams/members/invites": typeof users_teams_members_invites;
+  "users/teams/members/permissions": typeof users_teams_members_permissions;
   "users/teams/members": typeof users_teams_members;
   "users/teams/messages": typeof users_teams_messages;
+  "users/teams/permissions/permissions": typeof users_teams_permissions_permissions;
   "users/teams/roles": typeof users_teams_roles;
   "users/teams": typeof users_teams;
   users: typeof users;

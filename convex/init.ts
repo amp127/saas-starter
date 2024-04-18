@@ -1,5 +1,5 @@
 import { internalMutation } from "./functions";
-import { getPermission } from "./permissions";
+import { getPermission } from "./users/teams/permissions/permissions";
 
 export const init = internalMutation({
   args: {},

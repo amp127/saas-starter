@@ -4,7 +4,7 @@ import {
   getRole,
   viewerHasPermission,
   viewerHasPermissionX,
-} from "../../permissions";
+} from "./permissions/permissions";
 import { Ent, MutationCtx, QueryCtx } from "../../types";
 import { paginationOptsValidator } from "convex/server";
 import { emptyPage, normalizeStringForSearch } from "../../utils";

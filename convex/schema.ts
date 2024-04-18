@@ -1,6 +1,7 @@
 import { defineEnt, defineEntSchema, getEntDefinitions } from "convex-ents";
 import { v } from "convex/values";
-import { vPermission, vRole } from "./permissions";
+import { vPermission, vRole } from "./users/teams/permissions/permissions";
+import { vPermission2 } from "./users/teams/members/permissions";
 
 // Example: 7 day soft deletion period for teams
 const TEAM_DELETION_DELAY_MS = 7 * 24 * 60 * 60 * 1000;
@@ -54,11 +55,16 @@ const schema = defineEntSchema(
     })
       .field("name", vRole, { unique: true })
       .edges("permissions")
+      .edges("permissions2")
       .edges("members", { ref: true })
       .edges("invites", { ref: true }),
 
     permissions: defineEnt({})
       .field("name", vPermission, { unique: true })
+      .edges("roles"),
+
+    permissions2: defineEnt({})
+      .field("name", vPermission2, { unique: true })
       .edges("roles"),
 
     messages: defineEnt({

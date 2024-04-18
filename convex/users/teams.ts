@@ -1,6 +1,6 @@
 import { v } from "convex/values";
 import { mutation, query } from "../functions";
-import { getRole, viewerHasPermissionX } from "../permissions";
+import { getRole, viewerHasPermissionX } from "./teams/permissions/permissions";
 import { Ent, QueryCtx } from "../types";
 import { slugify } from "../utils";
 import { createMember } from "./teams/members";

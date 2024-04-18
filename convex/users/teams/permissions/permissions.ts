@@ -1,6 +1,7 @@
 import { Infer, v } from "convex/values";
-import { MutationCtx, QueryCtx } from "./types";
-import { Id } from "./_generated/dataModel";
+import { MutationCtx, QueryCtx } from "../../../types";
+import { Id } from "../../../_generated/dataModel";
+import { query } from "../../../functions";
 
 export const vPermission = v.union(
   v.literal("Manage Team"),
@@ -11,7 +12,7 @@ export const vPermission = v.union(
 );
 export type Permission = Infer<typeof vPermission>;
 
-export const vRole = v.union(v.literal("Admin"), v.literal("Member"));
+export const vRole = v.union(v.literal("Admin"), v.literal("Member"), v.literal("User"));
 export type Role = Infer<typeof vRole>;
 
 export async function getPermission(ctx: QueryCtx, name: Permission) {
@@ -74,3 +75,14 @@ export async function viewerHasPermissionX(
   await viewerWithPermissionX(ctx, teamId, name);
   return true;
 }
+
+export const getUserPermissionList = query({
+  args: {},
+  async handler(ctx) {
+    const permissions = await ctx.table("permissions").map((permission) => ({
+      _id: permission._id,
+      name: permission.name,
+    }));
+    return permissions;
+  },
+});
